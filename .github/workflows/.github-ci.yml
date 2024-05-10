@@ -1,0 +1,11 @@
+name: Adjacent
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    uses: denqiu/reusable-tools/.github/workflows/py-poetry-test.yml@main
+    with:
+      version: 3.12

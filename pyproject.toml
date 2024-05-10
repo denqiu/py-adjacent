@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "py-adjacent"
+version = "0.1.0"
+description = ""
+authors = ["Dennis Qiu <dennisqiu123@gmail.com>"]
+license = "LICENSE.md"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+numpy = "1.26.4"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.0"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
