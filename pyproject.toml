@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py-adjacent"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["Dennis Qiu <dennisqiu123@gmail.com>"]
 license = "LICENSE.md"

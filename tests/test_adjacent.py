@@ -23,17 +23,12 @@ def test_adjacent():
     random_array = numpy.array([])
     p_true, p_false = (1.0, 0.0)
     while generator.choice([True, False], p=[p_true, p_false], size=1)[0]:
-        random_element = generator.integers(1, 10000)
+        generator_counts = generator.integers(1, 10)
+        random_elements = generator.integers(1, 10000, size=generator_counts)
         if generator.choice([True, False], 1)[0]:
-            random_element = numpy.char.mod("text-%s", random_element)
-        random_size = generator.integers(1, 1000)
-        random_array = numpy.concatenate([random_array, numpy.repeat(random_element, random_size)])
-        p_decimal = generator.uniform(high=p_true)
-        p_true -= p_decimal
-        p_false += p_decimal
-    p_true, p_false = (1.0, 0.0)
-    while generator.choice([True, False], p=[p_true, p_false], size=1)[0]:
-        generator.shuffle(random_array)
+            random_elements = numpy.char.mod("text-%s", random_elements)
+        random_sizes = generator.integers(1, 1000, size=generator_counts)
+        random_array = numpy.concatenate([random_array, numpy.repeat(random_elements, random_sizes)])
         p_decimal = generator.uniform(high=p_true)
         p_true -= p_decimal
         p_false += p_decimal
